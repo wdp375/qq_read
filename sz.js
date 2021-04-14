@@ -62,11 +62,10 @@ let szhd = $.getdata('szhd')
     await szck()
    
   } else {
-    for (let i = 0; i < 6; i++) {
-      $.index = i + 1
-      console.log(`\n闪挣第${i+1}次运行！💦\n等待65秒开始执行下一次任务`)
+   
+      console.log(`\n闪挣開始！💦\n`)
     await szsp();
-     await $.wait(65000);
+
   }
 //$.msg("","","闪挣运行完毕！")
   }
