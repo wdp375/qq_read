@@ -64,7 +64,7 @@ let szhd = $.getdata('szhd')
   } else {
    
       console.log(`\n闪挣開始！💦\n`)
-    await szsp();
+    await szsp()
 
   }
 //$.msg("","","闪挣运行完毕！")
