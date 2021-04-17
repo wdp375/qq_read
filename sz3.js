@@ -87,7 +87,7 @@ let url = {
 if(result.code == 400){
         console.log('闪挣小视频回执:失败🚫 '+result.message)}
 await $.wait(3000);
-await szyx()
+console.log('因官方限制，跳过小游戏奖励。 '+result.message)}
         } catch (e) {
           //$.logErr(e, resp);
         } finally {
