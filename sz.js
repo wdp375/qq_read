@@ -47,7 +47,7 @@ function swck() {
 
 
 
-function szqd(timeout = 0) {
+function swqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
       if (typeof $.getdata('swurl') === "undefined") {
