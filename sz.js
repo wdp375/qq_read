@@ -37,50 +37,38 @@ TG电报群: https://t.me/hahaha8028
 
 
 
-#loon
-^https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward script-path=https://raw.githubusercontent.com/age174/-/main/sz.js, requires-header=true, timeout=10, tag=闪挣
-
-
-
-#surge
-
-闪挣 = type=http-request,pattern=^https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/sz.js,script-update-interval=0
-
-
-
-
 [MITM]
 hostname = api-9f9d25.sz365.cn
 
 
 */
-const $ = new Env('闪挣');
-let szurl = $.getdata('szurl')
-let szhd = $.getdata('szhd')
+const $ = new Env('速蛙');
+let swurl = $.getdata('swurl')
+let swhd = $.getdata('swhd')
 !(async () => {
   if (typeof $request !== "undefined") {
-    await szck()
+    await swck()
    
   } else {
    
-      console.log(`\n闪挣開始！💦\n`)
-    await szsp()
-//$.msg("","","闪挣运行完毕！")
+      console.log(`\n速蛙開始！💦\n`)
+    await swsp()
+//$.msg("","","速蛙运行完毕！")
   }
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
-//闪挣数据获取
-function szck() {
-   if ($request.url.indexOf("virtual_currency_v2/reward") > -1){
- const szurl = $request.url
-  if(szurl)     $.setdata(szurl,'szurl')
-    $.log(szurl)
-    const szhd = JSON.stringify($request.headers)
-        if(szhd)    $.setdata(szhd,'szhd')
-    $.log(szhd)
+//速蛙数据获取
+function swck() {
+   if ($request.url.indexOf("api_mweb/user/checkin") > -1){
+ const swurl = $request.url
+  if(swurl)     $.setdata(swurl,'swurl')
+    $.log(swurl)
+    const swhd = JSON.stringify($request.headers)
+        if(swhd)    $.setdata(swhd,'swhd')
+    $.log(swhd)
     
-   $.msg($.name,"","闪挣数据获取成功！")
+   $.msg($.name,"","速蛙数据获取成功！")
   }
 }
 
@@ -93,13 +81,13 @@ function szck() {
 function szsp(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('szurl') === "undefined") {
-        $.msg($.name,"",'请先获取闪挣数据',)
+      if (typeof $.getdata('swurl') === "undefined") {
+        $.msg($.name,"",'请先获取速蛙数据',)
         $.done()
       }
 let url = {
-        url : 'https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward',
-        headers : JSON.parse($.getdata('szhd')),
+        url : 'https://m.ok8.icu/api_mweb/user/checkin',
+        headers : JSON.parse($.getdata('swhd')),
         body : `type=203`,}
       $.post(url, async (err, resp, data) => {
         try {
