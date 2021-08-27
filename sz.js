@@ -55,6 +55,7 @@ function swqd(timeout = 0) {
         $.msg($.name,"",'请先获取速蛙数据',)
         $.done()
       }
+console.log($.getdata('swhd')['AuthorizationMweb'])
 const headers = {
 'Accept' : `application/json, text/plain, */*`,
 'Origin' : `https://m.ok8.icu`,
