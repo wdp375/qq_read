@@ -70,10 +70,10 @@ $task.fetch(myRequest).then(response => {
 
 
         }
-        console.log('你已经签到过了。'+ response.text)
+        console.log('你已经签到过了。'+ response.body)
     }
     if (response.statusCode == 200){
-        console.log('签到成功。'+ response.text)
+        console.log('签到成功。'+ response.body)
     }
     $done();
 });
