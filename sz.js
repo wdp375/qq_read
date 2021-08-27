@@ -59,12 +59,12 @@ const headers = {
 'Accept' : `application/json, text/plain, */*`,
 'Origin' : `https://m.ok8.icu`,
 'Connection' : `keep-alive`,
-'Cookie' : $.getdata('swhd')['Cookie']
+'Cookie' : $.getdata('swhd')['Cookie'],
 'Host' : `m.ok8.icu`,
 'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1`,
 'Accept-Language' : `zh-cn`,
 'Accept-Encoding' : `gzip, deflate, br`,
-'AuthorizationMweb' : `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmUiOjE2MzAwNTAzMjAsInVpZCI6MjQ0OTUxLCJrZXkiOiJlYjFjOTAxYzUzNmE0MzExOGE3MGQ3MjBiMjM0YWE2OTQ2NzFhMDgzMDM2NTEwNiJ9.kmKnlk6QIfjKR_bWpJgDfQTIKNgN4NNGsPwhZKWj2dE`
+'AuthorizationMweb' :  $.getdata('swhd')['AuthorizationMweb']
 };
 const myRequest =  {
     url: `https://m.ok8.icu/api_mweb/user/checkin`,
