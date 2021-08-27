@@ -8,7 +8,7 @@
 [rewrite_local]
 #速蛙
 ^https://m.ok8.icu/api_mweb/user/checkin url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js
-
+#####################################################################################################################################
 
 [MITM]
 hostname = m.ok8.icu
