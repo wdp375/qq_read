@@ -61,22 +61,14 @@ let myRequest =  {
     headers: $.getdata('swhd'),
     body: ``
 }
-console.log(myRequest.headers)
 $task.fetch(myRequest).then(response => {
-    if (response.statusCode == 401){
-        for (key in response['headers']){
-            const value=response['headers'][key]
-            console.log('key:'+key+'value:'+value)
-
-
-        }
-        console.log('你已经签到过了。'+ response.body)
-    }
-    if (response.statusCode == 200){
-        console.log('签到成功。'+ response.body)
-    }
+    console.log(response.statusCode + "\n\n" + response.body);
+    $done();
+}, reason => {
+    console.log(reason.error);
     $done();
 });
+
     },timeout)
   })
 }
