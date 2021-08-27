@@ -72,11 +72,11 @@ $task.fetch(myRequest).then(response => {
     
      if(result.code == 10){
         console.log('你已经签到过了。'+result.message)
-}
-    $done();
+$done();}
+    
     if(result.code == 400){
         console.log('签到成功！'+result.mesaage)
-    $done();}
+$done();}
 }, reason => {
     console.log(reason.error);
     $done();
