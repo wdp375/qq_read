@@ -55,7 +55,7 @@ function swqd(timeout = 0) {
         $.msg($.name,"",'请先获取速蛙数据',)
         $.done()
       }
-let myRequest =  {
+const myRequest =  {
     url: `https://m.ok8.icu/api_mweb/user/checkin`,
     method: `PUT`,
     headers: $.getdata('swhd'),
