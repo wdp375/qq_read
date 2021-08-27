@@ -56,9 +56,9 @@ function swqd(timeout = 0) {
         $.done()
       }
 
-console.log(typeof ($.getdata('swhd')))
-$.getdata('swhd') = JSON.parse($.getdata('swhd'))   
-console.log(typeof ($.getdata('swhd')))
+
+swhd = JSON.parse($.getdata('swhd'))   
+
             
 const headers = {
 'Accept' : `application/json, text/plain, */*`,
@@ -74,7 +74,7 @@ const headers = {
 const myRequest =  {
     url: `https://m.ok8.icu/api_mweb/user/checkin`,
     method: `PUT`,
-    headers: headers,
+    headers: swhd,
     body: ``
 }
 $task.fetch(myRequest).then(response => {
