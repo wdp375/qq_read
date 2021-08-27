@@ -55,10 +55,22 @@ function swqd(timeout = 0) {
         $.msg($.name,"",'请先获取速蛙数据',)
         $.done()
       }
+const headers = {
+'Accept' : `application/json, text/plain, */*`,
+'Origin' : `https://m.ok8.icu`,
+'Connection' : `keep-alive`,
+'Cookie' : `_ga_TVRF6RYBHW=GS1.1.1630046720.10.1.1630046741.0; _ga=GA1.1.1409673762.1629640553; email=2606880852%40qq.com; expire_in=1632232616; ip=4d83199d43e64dbda1df6866a94448e3; key=3d2210aa3d95a1fa89d4f18a50a51eee498a29a190dcc; new_panel=1; uid=244951; _gcl_au=1.1.1719365756.1629640553`,
+'Referer' : `https://m.ok8.icu/m/home`,
+'Host' : `m.ok8.icu`,
+'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1`,
+'Accept-Language' : `zh-cn`,
+'Accept-Encoding' : `gzip, deflate, br`,
+'AuthorizationMweb' : `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHBpcmUiOjE2MzAwNTAzMjAsInVpZCI6MjQ0OTUxLCJrZXkiOiJlYjFjOTAxYzUzNmE0MzExOGE3MGQ3MjBiMjM0YWE2OTQ2NzFhMDgzMDM2NTEwNiJ9.kmKnlk6QIfjKR_bWpJgDfQTIKNgN4NNGsPwhZKWj2dE`
+};
 const myRequest =  {
     url: `https://m.ok8.icu/api_mweb/user/checkin`,
     method: `PUT`,
-    headers: $.getdata('swhd'),
+    headers: headers,
     body: ``
 }
 $task.fetch(myRequest).then(response => {
