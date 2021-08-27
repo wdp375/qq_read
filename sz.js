@@ -1,40 +1,12 @@
 /*
-软件名称:闪挣
-更新时间：2021-02-18 @肥皂
-脚本说明：闪挣
-脚本为闪挣自动刷视频奖励和小游戏奖励
-
-上限暂时不知道多少，刷了一晚上有一万还没上限，没测试
-
-暂定一块钱一天？？？？？？
-
-食用方法:
-首次运行脚本，会提示获取body
-进入闪挣，娱乐赚，看视频领金币，看视频金币转圈结束，提示成功获取数据即可
-
-TG电报群: https://t.me/hahaha8028
-注意:
-扫描二维码下载
-
-二维码下载地址 https://raw.githubusercontent.com/age174/-/main/BB9F8DA3-E631-4B4C-A65A-751829C1D7EC.jpeg
-
-保存二维码微信扫码打开下载。
-
-我的邀请码 : u35545875447  感谢大佬们填写 
-
-因为还没测出上限，可以试试每十分钟运行一次看看
-
-闪挣
-圈X配置如下，其他软件自行测试
 [task_local]
-#闪挣
-10 * * * * https://github.com/dclemon/qq_read/edit/master/sz.js, tag=速蛙, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
+#速蛙
+10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=速蛙, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
 
 
 [rewrite_local]
-#闪挣
-^https://m.ok8.icu/api_mweb/user/checkin url script-request-header https://github.com/dclemon/qq_read/edit/master/sz.js
-
+#速蛙
+^https://m.ok8.icu/api_mweb/user/checkin url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js
 
 
 [MITM]
