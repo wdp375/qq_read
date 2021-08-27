@@ -28,17 +28,17 @@ TG电报群: https://t.me/hahaha8028
 圈X配置如下，其他软件自行测试
 [task_local]
 #闪挣
-10 * * * * https://raw.githubusercontent.com/age174/-/main/sz.js, tag=闪挣, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
+10 * * * * https://github.com/dclemon/qq_read/edit/master/sz.js, tag=速蛙, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
 
 
 [rewrite_local]
 #闪挣
-^https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward url script-request-header https://raw.githubusercontent.com/age174/-/main/sz.js
+^https://m.ok8.icu/api_mweb/user/checkin url script-request-header https://github.com/dclemon/qq_read/edit/master/sz.js
 
 
 
 [MITM]
-hostname = api-9f9d25.sz365.cn
+hostname = m.ok8.icu
 
 
 */
