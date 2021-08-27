@@ -59,18 +59,6 @@ function swqd(timeout = 0) {
 
 swhd = JSON.parse($.getdata('swhd'))   
 
-            
-const headers = {
-'Accept' : `application/json, text/plain, */*`,
-'Origin' : `https://m.ok8.icu`,
-'Connection' : `keep-alive`,
-'Cookie' : $.getdata('swhd')['Cookie'],
-'Host' : `m.ok8.icu`,
-'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1`,
-'Accept-Language' : `zh-cn`,
-'Accept-Encoding' : `gzip, deflate, br`,
-'AuthorizationMweb' :  $.getdata('swhd')['AuthorizationMweb']
-};
 const myRequest =  {
     url: `https://m.ok8.icu/api_mweb/user/checkin`,
     method: `PUT`,
