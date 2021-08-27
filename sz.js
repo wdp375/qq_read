@@ -1,4 +1,5 @@
 /*
+速蛙机场签到
 [task_local]
 #速蛙
 10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=速蛙, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
