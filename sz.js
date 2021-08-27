@@ -61,7 +61,7 @@ let myRequest =  {
     headers: $.getdata('swhd'),
     body: ``
 }
-
+console.log(myRequest.headers)
 $task.fetch(myRequest).then(response => {
     if (response.statusCode == 401){
         for (key in response['headers']){
