@@ -56,6 +56,12 @@ function swqd(timeout = 0) {
         $.done()
       }
 console.log($.getdata('swhd')['AuthorizationMweb'])
+        
+        
+for (keys in $.getdata('swhd')){
+console.log(keys)
+
+}
 const headers = {
 'Accept' : `application/json, text/plain, */*`,
 'Origin' : `https://m.ok8.icu`,
