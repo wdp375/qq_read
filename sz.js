@@ -61,7 +61,7 @@ let url =  {
     body: ``
 }
 
-$task.fetch(myRequest).then(response => {
+$task.fetch(url).then(response => {
     console.log(response.statusCode + "\n\n" + response.body);
     $done();
 }, reason => {
