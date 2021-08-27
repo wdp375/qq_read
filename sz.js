@@ -64,10 +64,10 @@ let url =  {
 
 $task.fetch(url).then(response => {
     if (response.statusCode == 401){
-        console.log('你已经签到过了。'+ response.text)
+        console.log('你已经签到过了。'+ response.json())
     }
     if (response.statusCode == 200){
-        console.log('签到成功。'+ response.text)
+        console.log('签到成功。'+ response.json())
     }
     $done();
 });
