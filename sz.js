@@ -74,7 +74,6 @@ $task.fetch(myRequest).then(response => {
 }
     if(result.code == 400){
         console.log('签到成功！'+result.mesaage)}
-        }
 }, reason => {
     console.log(reason.error);
     $done();
