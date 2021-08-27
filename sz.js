@@ -66,9 +66,10 @@ const myRequest =  {
     body: ``
 }
 $task.fetch(myRequest).then(response => {
-    console.log(response.statusCode + "\n\n" + response.body);
-    $done();
     const result = JSON.parse(response.body)
+
+    $done();
+    
      if(result.code == 10){
         console.log('你已经签到过了。'+result.message)
 }
