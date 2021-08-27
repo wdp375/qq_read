@@ -56,7 +56,7 @@ function swqd(timeout = 0) {
         $.done()
       }
 let myRequest =  {
-    url: 'https://m.ok8.icu/api_mweb/user/checkin',
+    url: `https://m.ok8.icu/api_mweb/user/checkin`,
     method: `PUT`,
     headers: $.getdata('swhd'),
     body: ``
