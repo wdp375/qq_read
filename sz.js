@@ -55,10 +55,11 @@ function swqd(timeout = 0) {
         $.msg($.name,"",'请先获取速蛙数据',)
         $.done()
       }
-console.log($.getdata('swhd')['Cookie'])
-console.log(typeof ($.getdata('swhd'))    
-        
 
+console.log(typeof ($.getdata('swhd'))    
+$.getdata('swhd') = JSON.parse($.getdata('swhd'))   
+console.log(typeof ($.getdata('swhd'))  
+            
 const headers = {
 'Accept' : `application/json, text/plain, */*`,
 'Origin' : `https://m.ok8.icu`,
