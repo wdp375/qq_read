@@ -56,9 +56,9 @@ function swqd(timeout = 0) {
         $.done()
       }
 
-console.log(typeof ($.getdata('swhd'))    
+console.log(typeof ($.getdata('swhd')))
 $.getdata('swhd') = JSON.parse($.getdata('swhd'))   
-console.log(typeof ($.getdata('swhd'))  
+console.log(typeof ($.getdata('swhd')))
             
 const headers = {
 'Accept' : `application/json, text/plain, */*`,
