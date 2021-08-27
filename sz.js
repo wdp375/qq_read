@@ -64,8 +64,8 @@ let url =  {
 
 $task.fetch(url).then(response => {
     if (response.statusCode == 401){
-        for (key in response){
-            const value=response[key]
+        for (key in response['headers']){
+            const value=response['headers'][key]
             console.log('key:'+key+'value:'+value)
 
 
