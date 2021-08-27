@@ -26,7 +26,7 @@ let swhd = $.getdata('swhd')
 
         console.log(`\n速蛙開始！💦\n`)
         await swqd()
-        //$.msg("","","速蛙运行完毕！")
+        $.msg("","","速蛙运行完毕！")
     }
 })()
     .catch((e) => $.logErr(e))
