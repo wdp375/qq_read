@@ -74,8 +74,8 @@ $task.fetch(myRequest).then(response => {
         console.log('你已经签到过了。'+result.message)
 $done();}
     
-    if(result.code == 400){
-        console.log('签到成功！'+result.mesaage)
+    else{
+        console.log('签到成功！'+result.mesaage+result.code)
 $done();}
 }, reason => {
     console.log(reason.error);
