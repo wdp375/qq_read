@@ -70,19 +70,19 @@ $task.fetch(myRequest).then(response => {
     console.log(result.message)
      if(result.currentSignState == true){
         console.log('签到成功：获得'+result.message.point+"积分。")
-;}
+ $done();}
     if(result.currentSignState == false){
       if(result.hadSign == true){
       console.log('签到失败，今天已经签过，并获得了'+result.message.point+"积分。")
-      }
+ $done();}
       else{
       console.log('签到失败，一下是详细信息：\n'+result.message)
       
-      }
+ $done();}
 ;}
 }, reason => {
     console.log(reason.error);
-;
+ $done();
 });
 
     },timeout)
