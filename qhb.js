@@ -1,5 +1,7 @@
 
 /*
+
+邀请码：07QVUWP，麻烦填写一下谢谢。
 趣红包https://github.com/dclemon/qq_read/blob/master/qhb.js
 
 [task_local]
