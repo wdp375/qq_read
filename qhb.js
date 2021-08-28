@@ -24,7 +24,7 @@ let qhbhd = $.getdata('qhbhd')
 
         console.log(`\n趣红包開始！💦\n`)
         await qhb_spjb()
-        await qhb_lxjl()
+        //await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
     }
 })()
@@ -32,8 +32,7 @@ let qhbhd = $.getdata('qhbhd')
     .finally(() => $.done())
 //数据获取
 function qhbck() {
-    
-    /*
+
     if ($request.url.indexOf("api2.guaniuvideo.com/reward/video") > -1) {
         const qhburl = $request.url
         if (qhburl) $.setdata(qhburl, 'qhburl')
@@ -48,7 +47,7 @@ function qhbck() {
         
         $.msg($.name, "", "趣红包视频数据获取成功！")
     }
-    */
+
     if ($request.url.indexOf("leaveReward") > -1) {
         const qh_lx_burl = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
@@ -70,10 +69,12 @@ function qhb_spjb(timeout = 1000) {
         $.msg($.name,"",'请先获取趣红包视频数据',)
         $.done()
       }
+        /*
       if (typeof $.getdata('qhb_lx_hd') === "undefined") {
         $.msg($.name,"",'请先获取趣红包离线数据',)
         $.done()
       }
+      */
 
 
 qhbhd = JSON.parse($.getdata('qhbhd')) 
