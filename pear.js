@@ -4,7 +4,7 @@
 
 [task_local]
 #pear
-10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=Pear, enabled=true
+4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=Pear, enabled=true
 
 
 [rewrite_local]
