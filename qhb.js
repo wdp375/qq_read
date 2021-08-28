@@ -43,7 +43,7 @@ function pearck() {
         $.msg($.name, "", "趣红包数据获取成功！")
     }
 }
-
+//视频金币
 function qhb_spjb(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
