@@ -46,6 +46,7 @@ function qhbck() {
 }
 //视频金币
 function qhb_spjb(timeout = 1000) {
+    console.log('49')
   return new Promise((resolve) => {
     setTimeout( ()=>{
       if (typeof $.getdata('qhburl') === "undefined") {
@@ -53,7 +54,7 @@ function qhb_spjb(timeout = 1000) {
         $.done()
       }
 
-
+console.log('57')
 
 const myRequest = {
     url: $.getdata('qhburl'),
@@ -61,8 +62,10 @@ const myRequest = {
     headers: qhbhd,
     body: $.getdata('qhbbody')
 };
+        console.log('65')
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
+    console.log('68')
      if(result.code == 200){
         console.log('趣红包观看成功：获得'+result.data.reward_gold+"金币。")
  $done();}
