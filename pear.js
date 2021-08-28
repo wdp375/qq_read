@@ -16,26 +16,26 @@
 hostname = m.pearkin.com
 */
 const $ = new Env('pear');
-let swurl = $.getdata('pearurl')
-let swhd = $.getdata('pearhd')
+let pearurl = $.getdata('pearurl')
+let pearhd = $.getdata('pearhd')
 !(async () => {
     if (typeof $request !== "undefined") {
-        await swck()
+        await pearck()
 
     } else {
 
         console.log(`\nPear開始！💦\n`)
-        await swqd()
+        await pearqd()
         $.msg("","","Pear运行完毕！")
     }
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 //数据获取
-function swck() {
+function pearck() {
     if ($request.url.indexOf("api/account/ExeSign") > -1) {
-        const swurl = $request.url
-        if (swurl) $.setdata(pearurl, 'pearurl')
+        const pearurl = $request.url
+        if (pearurl) $.setdata(pearurl, 'pearurl')
         $.log(pearurl)
         const pearhd = JSON.stringify($request.headers)
         if (pearhd) $.setdata(pearhd, 'pearhd')
@@ -57,7 +57,7 @@ function pearqd(timeout = 0) {
       }
 
 
-swhd = JSON.parse($.getdata('pearhd'))   
+pearhd = JSON.parse($.getdata('pearhd'))   
 
 const myRequest =  {
     url: $request.url,
