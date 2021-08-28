@@ -67,6 +67,7 @@ const myRequest =  {
 }
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
+    console.log(result.message)
      if(result.currentSignState == true){
         console.log('签到成功：获得'+result.message.point+"积分。")
 ;}
