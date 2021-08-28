@@ -66,8 +66,11 @@ const myRequest = {
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
     console.log('68')
+    console.log(result.code)
      if(result.code == 200){
+         console.log('70')
         console.log('趣红包观看成功：获得'+result.data.reward_gold+"金币。")
+         console.log('72')
  $done();}
 }, reason => {
     console.log(reason.error);
