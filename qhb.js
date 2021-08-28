@@ -69,7 +69,7 @@ $task.fetch(myRequest).then(response => {
     console.log(result.code)
      if(result.code == 200){
          console.log('70')
-        console.log('趣红包观看成功：获得'+result.data.reward_gold+"金币。")
+        console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
          console.log('72')
  $done();}
 }, reason => {
