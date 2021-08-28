@@ -52,23 +52,22 @@ function pearqd(timeout = 1000) {
         $.done()
       }
 
-console.log('1')
+
 pearhd = JSON.parse($.getdata('pearhd'))   
-console.log(pearhd)
+
 const myRequest =  {
     url: $.getdata('pearurl'),
     method: `POST`,
     headers: pearhd,
     body: ``
 }
-console.log('2')
+
 $task.fetch(myRequest).then(response => {
 
     if(response.body == '您无权查看此目录或页面。'){
         console.log('签到失败：您无权查看此目录或页面。')
  $done();}
     const result = JSON.parse(response.body)
-
     if(result.currentSignState == true){
         console.log('签到成功：获得'+result.point+"积分。")
  $done();}
