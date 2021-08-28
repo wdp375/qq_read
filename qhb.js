@@ -95,6 +95,7 @@ $task.fetch(myRequest).then(response => {
      if(result.code == 200){
 
         console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
+        $done()
 
          
          
