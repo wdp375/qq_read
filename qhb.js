@@ -92,7 +92,7 @@ function qhb_lxjl(timeout = 1000){
         $.msg($.name,"",'请先获取趣红包数据',)
         $.done()
       }
-        
+    console.log(95)    
 
 qhbhd = {
 'uuid' : JSON.parse($.getdata('qhbhd'))  .uuid,
@@ -113,7 +113,10 @@ qhbhd = {
 'Accept-Language' : `zh-Hans-US;q=1, en-US;q=0.9`,
 'Accept' : `*/*`
 }
-console.log(String(qhbhd))
+
+    console.log(117)    
+    console.log(qhbhd)
+
 
         
 const myRequest2 = {
