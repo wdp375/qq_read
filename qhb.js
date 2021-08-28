@@ -56,9 +56,7 @@ function qhbck() {
         const qhb_lx_body = JSON.stringify($request.body)
         if (qhb_lx_body) $.setdata(qhb_lx_hd, 'qhbbody')
         $.log(qhb_lx_body)
-        const qhb_lx_hd = JSON.stringify($request.headers)
-        if (qhb_lx_hd) $.setdata(qhbhd, 'qhb_lx_hd')
-        $.log(qhb_lx_hd)
+
         
         
         $.msg($.name, "", "趣红包离线奖励数据获取成功！")
