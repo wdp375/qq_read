@@ -4,12 +4,12 @@
 #####################################################################################################################################
 [task_local]
 #趣红包
-4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js, tag=Pear, enabled=true
+4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js, tag=趣红包, enabled=true
 [rewrite_local]
 #趣红包
-^https://m.pearkin.com/api/account/ExeSign url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js
+^http://api2.guaniuvideo.com/reward/video url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
-hostname = m.pearkin.com
+hostname = api2.guaniuvideo.com
 */
 
 const $ = new Env('趣红包');
