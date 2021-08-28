@@ -118,7 +118,7 @@ $task.fetch(myRequest).then(response => {
 
 }$done()
 }, reason => {
-    console.log(reason.error);
+    console.log('状态码显示出错了！');
 
 
 });
@@ -133,13 +133,11 @@ function qhb_lxjl(timeout = 1000){
         $.msg($.name,"",'请先获取趣红包数据',)
         $.done()
       }
-    console.log(95)    
 
 qhb_lx_hd = JSON.parse($.getdata('qhb_lx_hd')) 
 qhb_lx_hd.ApiSourceId = String(new Date().getTime())
         
 
-    console.log(117)    
 
 
 
@@ -160,7 +158,7 @@ $task.fetch(myRequest2).then(response => {
 
 }$done()
 }, reason => {
-    console.log(reason.error);
+    console.log('状态码显示出错了！');
 
 
 });
