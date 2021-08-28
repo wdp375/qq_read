@@ -49,17 +49,13 @@ function qhbck() {
         $.msg($.name, "", "趣红包视频数据获取成功！")
     }
     */
-    if ($request.url.indexOf("index/leaveReward") > -1) {
+    if ($request.url.indexOf("leaveReward") > -1) {
         const qh_lx_burl = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
         const qhb_lx_hd = JSON.stringify($request.headers)
         if (qhb_lx_hd) $.setdata(qhb_lx_hd, 'qhb_lx_hd')
         $.log(qhb_lx_hd)
-        const qhb_lx_body = JSON.stringify($request.body)
-        if (qhb_lx_body) $.setdata(qhb_lx_hd, 'qhbbody')
-        $.log(qhb_lx_body)
-
         
         
         $.msg($.name, "", "趣红包离线奖励数据获取成功！")
