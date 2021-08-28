@@ -67,7 +67,6 @@ const myRequest =  {
 }
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
-        console.log(result.text)
      if(result.currentSignState == true){
         console.log('签到成功：获得'+result.point+"积分。")
  $done();}
@@ -76,7 +75,7 @@ $task.fetch(myRequest).then(response => {
       console.log('签到失败，今天已经签过，并获得了'+result.point+"积分。")
  $done();}
       else{
-      console.log('签到失败，一下是详细信息：\n'+result.text)
+      console.log('签到失败，以下是详细信息：\n'+response.body)
       
  $done();}
 ;}
