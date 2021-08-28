@@ -78,7 +78,7 @@ function qhb_spjb(timeout = 1000) {
 
 
 qhbhd = JSON.parse($.getdata('qhbhd')) 
-qhbhd.ApiSourceId = String(new Date().getTime())
+
 
         
 const myRequest = {
