@@ -95,12 +95,12 @@ $task.fetch(myRequest).then(response => {
      if(result.code == 200){
 
         console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
-        $done()
+        
 
          
          
 
-}
+}$done()
 }, reason => {
     console.log(reason.error);
 
@@ -142,7 +142,7 @@ $task.fetch(myRequest2).then(response => {
         console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
           $done()
 
-}
+}$done()
 }, reason => {
     console.log(reason.error);
 
