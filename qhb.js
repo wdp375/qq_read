@@ -49,7 +49,7 @@ function qhbck() {
         $.msg($.name, "", "趣红包视频数据获取成功！")
     }
     */
-    if ($request.url.indexOf("api2.guaniuvideo.com/index/leaveReward") > -1) {
+    if ($request.url.indexOf("index/leaveReward") > -1) {
         const qh_lx_burl = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
