@@ -3,12 +3,12 @@
 
 
 [task_local]
-#速蛙
+#pear
 10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=Pear, enabled=true
 
 
 [rewrite_local]
-#速蛙
+#paer
 ^https://m.pearkin.com/api/account/ExeSign url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js
 #####################################################################################################################################
 
