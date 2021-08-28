@@ -22,7 +22,7 @@ let pearhd = $.getdata('pearhd')
     } else {
 
         console.log(`\n趣红包開始！💦\n`)
-        await pearqd()
+        await qhb_spjb()
         $.msg("","","趣红包运行完毕！")
     }
 })()
