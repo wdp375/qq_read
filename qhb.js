@@ -10,7 +10,7 @@
 ^http://api2.guaniuvideo.com/reward/video url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
 hostname = api2.guaniuvideo.com
-
+#####################################################################################################################################
 */
 
 const $ = new Env('趣红包');
