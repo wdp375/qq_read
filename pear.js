@@ -6,11 +6,9 @@
 #pear
 4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js, tag=Pear, enabled=true
 
-
 [rewrite_local]
 #pear
 ^https://m.pearkin.com/api/account/ExeSign url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js
-
 
 [MITM]
 hostname = m.pearkin.com
@@ -46,8 +44,6 @@ function pearck() {
 }
 
 
-
-
 function pearqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
@@ -56,7 +52,7 @@ function pearqd(timeout = 0) {
         $.done()
       }
 
-
+        
 pearhd = JSON.parse($.getdata('pearhd'))   
 
 const myRequest =  {
@@ -76,14 +72,12 @@ $task.fetch(myRequest).then(response => {
  $done();}
       else{
       console.log('签到失败，以下是详细信息：\n'+response.body)
-      
  $done();}
 ;}
 }, reason => {
     console.log(reason.error);
  $done();
 });
-
     },timeout)
   })
 }
