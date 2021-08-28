@@ -66,6 +66,9 @@ $task.fetch(myRequest).then(response => {
     console.log(response.body)
     const result = JSON.parse(response.body)
     console.log(result)
+    if(response.body == '您无权查看此目录或页面。'){
+        console.log('签到失败：您无权查看此目录或页面。')
+ $done();}
 
      if(result.currentSignState == true){
         console.log('签到成功：获得'+result.point+"积分。")
