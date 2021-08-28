@@ -45,7 +45,7 @@ function qhbck() {
     }
 }
 //视频金币
-function qhb_spjb(timeout = 0) {
+function qhb_spjb(timeout = 1000) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
       if (typeof $.getdata('qhburl') === "undefined") {
@@ -74,7 +74,7 @@ $task.fetch(myRequest).then(response => {
   })
 }
 //离线奖励
-function qhb_lxjl(timeout = 0){
+function qhb_lxjl(timeout = 1000){
     return new Promise((resolve) => {
     setTimeout( ()=>{
       if (typeof $.getdata('qhburl') === "undefined") {
