@@ -1,6 +1,6 @@
 
 /*
-趣红包
+趣红包https://github.com/dclemon/qq_read/blob/master/qhb.js
 
 [task_local]
 #趣红包
@@ -151,7 +151,7 @@ const myRequest2 = {
         
 $task.fetch(myRequest2).then(response => {
     const result = JSON.parse(response.body)
-    console.log(response.body)
+
      if(result.code == 200){
         console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
           $done()
