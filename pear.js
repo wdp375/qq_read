@@ -52,15 +52,16 @@ function pearqd(timeout = 0) {
         $.done()
       }
 
-        
+console.log('1')
 pearhd = JSON.parse($.getdata('pearhd'))   
-
+console.log(pearhd)
 const myRequest =  {
     url: $.getdata('pearurl'),
     method: `POST`,
     headers: pearhd,
     body: ``
 }
+console.log('2')
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
     console.log(result)
