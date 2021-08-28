@@ -72,10 +72,10 @@ $task.fetch(myRequest).then(response => {
 }
     if(result.code == 100){
         console.log('签到成功！')
-}
+}$.done()
 }, reason => {
     console.log(reason.error);
-
+$.done()
 });
 
     },timeout)
