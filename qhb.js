@@ -89,26 +89,27 @@ function qhb_lxjl(timeout = 1000){
         $.done()
       }
         
-qhbhd = JSON.parse($.getdata('qhbhd'))  
+
 qhbhd = {
-'uuid' : qhbhd.uuid,
+'uuid' : JSON.parse($.getdata('qhbhd'))  .uuid,
 'Connection' : `keep-alive`,
 'Accept-Encoding' : `gzip, deflate`,
 'version' : `v1`,
 'channel' : `appStore`,
-'idfa' : qhbhd.idfa,
+'idfa' : JSON.parse($.getdata('qhbhd'))  .idfa,
 'versionName' : `1.5.4`,
 'User-Agent' : `qhbVideo/1.5.4 (iPhone; iOS 14.7.1; Scale/3.00)`,
 'platform' : `ios`,
-'versionCode' : qhbhd.versionCode,
-'ApiAuthKey' : qhbhd.ApiAuthKey,
-'token' : qhbhd.token,
+'versionCode' : JSON.parse($.getdata('qhbhd'))  .versionCode,
+'ApiAuthKey' : JSON.parse($.getdata('qhbhd'))  .ApiAuthKey,
+'token' : JSON.parse($.getdata('qhbhd'))  .token,
 'Host' : `api2.guaniuvideo.com`,
 'ApiSourceId' : `160560789758`,
 'ApiAuthTime' : String(new Date().getTime()),
 'Accept-Language' : `zh-Hans-US;q=1, en-US;q=0.9`,
 'Accept' : `*/*`
 }
+console.log(String(qhbhd))
 
         
 const myRequest2 = {
@@ -120,6 +121,7 @@ const myRequest2 = {
         
 $task.fetch(myRequest2).then(response => {
     const result = JSON.parse(response.body)
+    console.log(response.body)
      if(result.code == 200){
         console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
 }
