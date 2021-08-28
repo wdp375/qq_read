@@ -139,6 +139,7 @@ $task.fetch(myRequest2).then(response => {
     console.log(response.body)
      if(result.code == 200){
         console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
+          $done()
 
 }
 }, reason => {
