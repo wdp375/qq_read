@@ -4,13 +4,13 @@
 
 [task_local]
 #pear
-4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sz.js, tag=Pear, enabled=true
+4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js, tag=Pear, enabled=true
 
 
 [rewrite_local]
-#paer
+#pear
 ^https://m.pearkin.com/api/account/ExeSign url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js
-#####################################################################################################################################
+
 
 [MITM]
 hostname = m.pearkin.com
