@@ -54,8 +54,7 @@ function qhb_spjb(timeout = 0) {
       }
 
 
-qhbhd = JSON.parse($.getdata('qhbhd'))  
-headers.ApiSourceId = String(new Date().getTime())
+
 let myRequest = {
     url: $.getdata('qhburl'),
     method: `POST`,
