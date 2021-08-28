@@ -42,7 +42,26 @@ function qhbck() {
         const qhbbody = JSON.stringify($request.body)
         if (qhbbody) $.setdata(qhbhd, 'qhbbody')
         $.log(qhbbody)
-        $.msg($.name, "", "趣红包数据获取成功！")
+        
+        
+        $.msg($.name, "", "趣红包视频数据获取成功！")
+    }
+    if ($request.url.indexOf("api2.guaniuvideo.com/index/leaveReward") > -1) {
+        const qh_lx_burl = $request.url
+        if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
+        $.log(qhb_lx_url)
+        const qhb_lx_hd = JSON.stringify($request.headers)
+        if (qhb_lx_hd) $.setdata(qhb_lx_hd, 'qhb_lx_hd')
+        $.log(qhb_lx_hd)
+        const qhb_lx_body = JSON.stringify($request.body)
+        if (qhb_lx_body) $.setdata(qhb_lx_hd, 'qhbbody')
+        $.log(qhb_lx_body)
+        const qhb_lx_hd = JSON.stringify($request.headers)
+        if (qhb_lx_hd) $.setdata(qhbhd, 'qhb_lx_hd')
+        $.log(qhb_lx_hd)
+        
+        
+        $.msg($.name, "", "趣红包离线奖励数据获取成功！")
     }
 }
 //视频金币
@@ -50,13 +69,20 @@ function qhb_spjb(timeout = 1000) {
 
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('qhburl') === "undefined") {
-        $.msg($.name,"",'请先获取趣红包数据',)
+      if (typeof $.getdata('qhbhd') === "undefined") {
+        $.msg($.name,"",'请先获取趣红包视频数据',)
+        $.done()
+      }
+      if (typeof $.getdata('qhb_lx_hd') === "undefined") {
+        $.msg($.name,"",'请先获取趣红包离线数据',)
         $.done()
       }
 
 
 qhbhd = JSON.parse($.getdata('qhbhd')) 
+qhbhd.ApiSourceId = String(new Date().getTime())
+
+        
 const myRequest = {
     url: $.getdata('qhburl'),
     method: `POST`,
@@ -94,35 +120,19 @@ function qhb_lxjl(timeout = 1000){
       }
     console.log(95)    
 
-qhbhd = {
-'uuid' : JSON.parse($.getdata('qhbhd'))  .uuid,
-'Connection' : `keep-alive`,
-'Accept-Encoding' : `gzip, deflate`,
-'version' : `v1`,
-'channel' : `appStore`,
-'idfa' : JSON.parse($.getdata('qhbhd'))  .idfa,
-'versionName' : `1.5.4`,
-'User-Agent' : `qhbVideo/1.5.4 (iPhone; iOS 14.7.1; Scale/3.00)`,
-'platform' : `ios`,
-'versionCode' : JSON.parse($.getdata('qhbhd'))  .versionCode,
-'ApiAuthKey' : JSON.parse($.getdata('qhbhd'))  .ApiAuthKey,
-'token' : JSON.parse($.getdata('qhbhd'))  .token,
-'Host' : `api2.guaniuvideo.com`,
-'ApiSourceId' : `160560789758`,
-'ApiAuthTime' : String(new Date().getTime()),
-'Accept-Language' : `zh-Hans-US;q=1, en-US;q=0.9`,
-'Accept' : `*/*`
-}
+qhb_lx_hd = JSON.parse($.getdata('qhb_lx_hd')) 
+qhb_lx_hd.ApiSourceId = String(new Date().getTime())
+        
 
     console.log(117)    
-    console.log(qhbhd)
+
 
 
         
 const myRequest2 = {
     url: `http://api2.guaniuvideo.com/index/leaveReward`,
     method: `POST`,
-    headers: qhbhd,
+    headers: qhb_lx_hd,
     body: ``
 };
         
