@@ -32,6 +32,8 @@ let qhbhd = $.getdata('qhbhd')
     .finally(() => $.done())
 //数据获取
 function qhbck() {
+    
+    /*
     if ($request.url.indexOf("api2.guaniuvideo.com/reward/video") > -1) {
         const qhburl = $request.url
         if (qhburl) $.setdata(qhburl, 'qhburl')
@@ -46,6 +48,7 @@ function qhbck() {
         
         $.msg($.name, "", "趣红包视频数据获取成功！")
     }
+    */
     if ($request.url.indexOf("api2.guaniuvideo.com/index/leaveReward") > -1) {
         const qh_lx_burl = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
