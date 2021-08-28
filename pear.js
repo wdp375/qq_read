@@ -60,7 +60,7 @@ function pearqd(timeout = 0) {
 pearhd = JSON.parse($.getdata('pearhd'))   
 
 const myRequest =  {
-    url: $request.url,
+    url: $.getdata('pearurl'),
     method: `POST`,
     headers: pearhd,
     body: ``
