@@ -67,15 +67,11 @@ const myRequest =  {
 }
 $task.fetch(myRequest).then(response => {
     const result = JSON.parse(response.body)
-
-    
-    
      if(result.code == 10){
-        console.log('你已经签到过了。'+result.message)
+        console.log('签到失败：'+result.message)
 $done();}
-    
-    else{
-        console.log('签到成功！'+result.mesaage+result.code)
+    if(result.code == 100){
+        console.log('签到成功！')
 $done();}
 }, reason => {
     console.log(reason.error);
