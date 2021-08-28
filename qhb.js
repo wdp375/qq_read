@@ -24,6 +24,7 @@ let qhbhd = $.getdata('qhbhd')
 
         console.log(`\n趣红包開始！💦\n`)
         await qhb_spjb()
+        await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
     }
 })()
@@ -55,7 +56,7 @@ function qhb_spjb(timeout = 1000) {
       }
 
 console.log('57')
-
+qhbhd = JSON.parse($.getdata('qhbhd')) 
 const myRequest = {
     url: $.getdata('qhburl'),
     method: `POST`,
