@@ -94,7 +94,7 @@ function qhb_spjb(timeout = 1000) {
 
 
 qhbhd = JSON.parse($.getdata('qhbhd')) 
-qhbhd.ApiAuthTime = String(new Date().getTime())
+//qhbhd.ApiAuthTime = String(new Date().getTime())
 
         
 const myRequest = {
