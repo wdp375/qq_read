@@ -44,7 +44,7 @@ function pearck() {
 }
 
 
-function pearqd(timeout = 0) {
+function pearqd(timeout = 1000) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
       if (typeof $.getdata('pearurl') === "undefined") {
@@ -63,14 +63,13 @@ const myRequest =  {
 }
 console.log('2')
 $task.fetch(myRequest).then(response => {
-    console.log(response.body)
-    const result = JSON.parse(response.body)
-    console.log(result)
+
     if(response.body == '您无权查看此目录或页面。'){
         console.log('签到失败：您无权查看此目录或页面。')
  $done();}
+    const result = JSON.parse(response.body)
 
-     if(result.currentSignState == true){
+    if(result.currentSignState == true){
         console.log('签到成功：获得'+result.point+"积分。")
  $done();}
     if(result.currentSignState == false){
