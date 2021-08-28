@@ -1,7 +1,7 @@
 /*
 雪梨签到领积分
 
-
+#####################################################################################################################################
 [task_local]
 #pear
 4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/pear.js, tag=Pear, enabled=true
