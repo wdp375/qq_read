@@ -55,7 +55,7 @@ function qhb_spjb(timeout = 1000) {
 
 
 
-let myRequest = {
+const myRequest = {
     url: $.getdata('qhburl'),
     method: `POST`,
     headers: qhbhd,
@@ -104,14 +104,14 @@ qhbhd = {
 }
 
         
-let myRequest = {
+const myRequest2 = {
     url: `http://api2.guaniuvideo.com/index/leaveReward`,
     method: `POST`,
     headers: qhbhd,
     body: ``
 };
         
-$task.fetch(myRequest).then(response => {
+$task.fetch(myRequest2).then(response => {
     const result = JSON.parse(response.body)
      if(result.code == 200){
         console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
