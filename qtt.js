@@ -15,7 +15,6 @@ hostname = api.1sapp.com
 
 
 */
-
 const $ = new Env("趣头条阅读文章")
 
 let Starturl = [], gainscore = Number(),Starthd = [];
@@ -54,8 +53,9 @@ Object.keys(Starthd).forEach((item) => {
 
 
 !(async () => {
-    if (!urlArr[0]) {
-        console.log($.name, '【提示】请抓包获取趣头条数据')
+    console.log(typeof $request)
+    if (typeof $request !== "undefined") {
+
         await getcookie()
 
     }else{
