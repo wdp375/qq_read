@@ -31,16 +31,18 @@ let m = $.qdata.length
     } else {
 
         console.log(`\n趣头条开始！💦\n`)
-        if ($.qdata_now = "undefined"){
+
+        if (typeof $.qdata_now === 'undefined'){
+
             $.qdata_now = 0
+            
         }
+
+        console.log('qdata_now='+$['qdata_now'])
         console.log(`\n共有${m}个qdata,当前执行第${$.qdata_now+1}个！💦\n`)
+
         await qtt_read($.qdata_now)
         $.qdata_now++
-        console.log('qdata_now='+$.qdata_now)
-
-
-
 
         $.msg("","","趣头条运行完毕！")
     }
@@ -52,6 +54,8 @@ let m = $.qdata.length
 function qtt_read(position){
     qdata = $.qdata[position]
     console.log('qdata='+qdata)
+
+
 
 }
 
