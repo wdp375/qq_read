@@ -25,7 +25,7 @@ const $ = new Env('趣红包');
         
         var num = 1;
             
-        while (num<=10){
+        while (num<=8){
             console.log(`\n趣红包观看视频！💦\n`)
             await qhb_spjb()
             await $.wait(60000);
