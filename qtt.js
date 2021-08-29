@@ -14,50 +14,42 @@
 hostname = api.1sapp.com
 
 
-*/const $ = new Env("趣头条阅读文章")
+*/
+const $ = new Env("趣头条阅读文章")
 
 let Starturl = [], gainscore = Number(),Starthd = [];
 let urlArr = [],hdArr = [];
 let startbodys = $.getdata('qtt_start')
 let endbodys = $.getdata('qtt_end')
-if (isGetCookie = typeof $request !==`undefined`) {
-    GetCookie();
-    $.done()
-}
 
 //这边是临时写的环境，放到圈×里之前要删掉
 
-/*
-
-
-
-*/
-
 
 //以下是主体代码
-Object.keys(Starturl).forEach((item) => {
-    if (Starturl[item]) {
-        urlArr.push(Starturl[item])
 
-    }
-})
-
-Object.keys(Starthd).forEach((item) => {
-    if (Starthd[item]) {
-        hdArr.push(Starthd[item])
-
-    }
-})
 
 
 
 !(async () => {
-    console.log(typeof $request)
     if (typeof $request !== "undefined") {
+        await qttck()
 
-        await getcookie()
+    } else {
 
-    }else{
+        console.log(`\n趣头条開始！💦\n`)
+        Object.keys(Starturl).forEach((item) => {
+            if (Starturl[item]) {
+                urlArr.push(Starturl[item])
+
+            }
+        })
+
+        Object.keys(Starthd).forEach((item) => {
+            if (Starthd[item]) {
+                hdArr.push(Starthd[item])
+
+            }
+        })
         console.log(`您共提供${urlArr.length}次阅读任务`)
         for (let i = 0; i < urlArr.length; i++) {
             if (urlArr[i]) {
@@ -70,12 +62,14 @@ Object.keys(Starthd).forEach((item) => {
         }
         console.log(`-------------------------\n\n趣头条共完成${$.index}次任务，浏览赚任务全部结束`);
         $.msg($.name, `共完成${$.index}次任务`)
-
-
     }
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
+
+
+
+
 
 
 function qtt_read() {
@@ -101,16 +95,33 @@ function qtt_read() {
     })
 }
 
-function getcookie(){
-    if ($request.url.indexOf("readtimer/report") > -1){
-        $.msg($.name,"","捕获到趣头条请求！")
-        const qtturl = $request.url
-        u1 = $.getdata('qtt_url')
-        if(qtturl)     $.setdata(qtturl+'&'+u1,'qtt_url')
-        const qtthd = JSON.stringify($request.headers)
-        h1 = $.getdata('qtt_hd')
-        if(qtthd)    $.setdata(qtthd+'&'+h1,'qtt_hd')
-        $.msg($.name,"","趣头条数据获取成功！")
+function qttck(){
+    console.log($request.url)
+    
+    if ($request.url.indexOf("report") > -1){
+
+
+        if ($.getdata('qtt_url') == 'undifined'){
+            const qtturl = $request.url
+            if(qtturl)     $.setdata(qtturl+'&','qtt_url')
+            const qtthd = JSON.stringify($request.headers)
+            if(qtthd)    $.setdata(qtthd+'&'+h1,'qtt_hd')
+            $.msg($.name,"","趣头条第一次数据获取成功！")
+
+
+        }else{
+            const qtturl = $request.url
+            u1 = $.getdata('qtt_url')
+            if(qtturl)     $.setdata(qtturl+'&'+u1,'qtt_url')
+            const qtthd = JSON.stringify($request.headers)
+            h1 = $.getdata('qtt_hd')
+            if(qtthd)    $.setdata(qtthd+'&'+h1,'qtt_hd')
+            $.msg($.name,"","趣头条数据获取成功！")
+            
+            
+        }
+
+        
         }
 }
 
