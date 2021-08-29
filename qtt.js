@@ -19,15 +19,14 @@ const $ = new Env("趣头条阅读文章")
 
 let Starturl = [], gainscore = Number(),Starthd = [];
 let urlArr = [],hdArr = [];
-let startbodys = $.getdata('qtt_start')
-let endbodys = $.getdata('qtt_end')
 
 //这边是临时写的环境，放到圈×里之前要删掉
 
 
 //以下是主体代码
 
-
+Starturl = $.getdata('qtt_url').split('&');
+Starthd = $.getdata('qtt_hd').split('&');
 
 
 !(async () => {
@@ -88,7 +87,7 @@ function qtt_read() {
                 }else{
                     $.log("失败:"+startres.message)
                 }
-                await $.wait(2000);
+                await $.wait(30000);
                 resolve()
             }catch(e){}finally {resolve()}
         })
@@ -97,7 +96,7 @@ function qtt_read() {
 
 function qttck(){
     console.log($request.url)
-    
+
     if ($request.url.indexOf("report") > -1){
 
 
@@ -117,11 +116,11 @@ function qttck(){
             h1 = $.getdata('qtt_hd')
             if(qtthd)    $.setdata(qtthd+'&'+h1,'qtt_hd')
             $.msg($.name,"","趣头条数据获取成功！")
-            
-            
+
+
         }
 
-        
+
         }
 }
 
