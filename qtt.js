@@ -102,7 +102,7 @@ function qtt_read() {
 }
 
 function getcookie(){
-    if ($request.url.indexOf("readtimer") > -1){
+    if ($request.url.indexOf("\/readtimer\/report") > -1){
         try{
             const qtturl = $request.url
             u1 = $.getdata('qtt_url')
