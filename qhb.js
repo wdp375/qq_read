@@ -33,7 +33,7 @@ const $ = new Env('趣红包');
             num++;
         }
         console.log(`\n趣红包离线奖励！💦\n`)
-        await qhb_lxjl()
+        //await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
     }
 })()
@@ -120,7 +120,7 @@ function qhb_spjb(timeout = 1000) {
   })
 }
 
-//离线奖励
+//离线奖励，似乎一天之内领5次，暂时ban了
 function qhb_lxjl(timeout = 1000) {
 
   return new Promise((resolve) => {
