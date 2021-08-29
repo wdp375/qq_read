@@ -41,6 +41,7 @@ const $ = new Env('趣红包');
     .finally(() => $.done())
 //数据获取
 function qhbck() {
+    console.log($request.url)
 
     if ($request.url == "http://api2.guaniuvideo.com/reward/video") {
         const qhburl = $request.url
@@ -72,6 +73,7 @@ function qhbck() {
     }
 
     else if ($request.url == "http://api2.guaniuvideo.com/index/leaveReward") {
+        console.log('离线数据匹配成功')
         const qhb_lx_url = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
