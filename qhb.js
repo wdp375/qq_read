@@ -85,82 +85,57 @@ function qhb_spjb(timeout = 1000) {
         $.msg($.name,"",'请先获取趣红包视频数据',)
         $.done()
       }
-        /*
-      if (typeof $.getdata('qhb_lx_hd') === "undefined") {
-        $.msg($.name,"",'请先获取趣红包离线数据',)
-        $.done()
-      }
-      */
-
-
-qhbhd = JSON.parse($.getdata('qhbhd')) 
-//qhbhd.ApiAuthTime = String(new Date().getTime())
-
-        
-const myRequest = {
+    qhbhd = JSON.parse($.getdata('qhbhd')) 
+    let url = {
     url: $.getdata('qhburl'),
     method: `POST`,
     headers: qhbhd,
     body: $.getdata('qhbbody')
-};
-
-$task.fetch(myRequest).then(response => {
-    const result = JSON.parse(response.body)
-
-    console.log(result.code)
-     if(result.code == 200){
-
-        console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
-        
-
-}$done();
-}, reason => {
-    console.log('状态码显示出错了！');
-    $done()
-
-
-});
+    }
+    $.post(url, async (err, resp, data) => {
+        try{
+            const result = JSON.parse(data)
+            if(result.code == 200){
+                console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
+            }
+            else{
+                console.log('出错了，以下是详细信息：'+String(result.data))
+            }
+        }catch(e){}finally{resolve()}
+    })
     },timeout)
   })
 }
+
 //离线奖励
-function qhb_lxjl(timeout = 1000){
-    return new Promise((resolve) => {
+function qhb_lxjl(timeout = 1000) {
+
+  return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('qhburl') === "undefined") {
-        $.msg($.name,"",'请先获取趣红包数据',)
+      if (typeof $.getdata('qhb_lx_hd') === "undefined") {
+        $.msg($.name,"",'请先获取趣红包离线奖励数据',)
         $.done()
       }
 
-qhb_lx_hd = JSON.parse($.getdata('qhb_lx_hd')) 
-qhb_lx_hd.ApiSourceId = String(new Date().getTime())
-        
 
-
-
-
-        
-const myRequest2 = {
-    url: `http://api2.guaniuvideo.com/index/leaveReward`,
+    qhb_lx_hd = JSON.parse($.getdata('qhb_lx_hd')) 
+    let url = {
+    url: $.getdata('qhb_lx_url'),
     method: `POST`,
     headers: qhb_lx_hd,
-    body: ``
-};
-        
-$task.fetch(myRequest2).then(response => {
-    const result = JSON.parse(response.body)
-
-     if(result.code == 200){
-        console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
-          $done()
-
-}
-}, reason => {
-    console.log('状态码显示出错了！');
-    $done()
-
-
-});
+    body: ''
+    }
+    $.post(url, async (err, resp, data) => {
+        try{
+            const result = JSON.parse(data)
+            if(result.code == 200){
+                console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
+            }
+            else{
+                console.log('出错了，以下是详细信息：'+String(result.data))
+            }
+        }catch(e){}finally{resolve()}
+    })
     },timeout)
   })
 }
