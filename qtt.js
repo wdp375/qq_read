@@ -52,10 +52,11 @@ Starthd = $.getdata('qtt_hd').split('&');
         console.log(`您共提供${urlArr.length}次阅读任务`)
         for (let i = 0; i < urlArr.length; i++) {
             if (urlArr[i]) {
-                gainurl = urlArr[i];
-                gainhd = JSON.parse(hdArr[i])
                 $.index = i + 1;
                 console.log(`-------------------------\n\n开始趣头条第${$.index}次任务`)
+                gainurl = urlArr[i];
+                gainhd = JSON.parse(hdArr[i])
+                
             }
             await qtt_read();
         }
@@ -65,10 +66,6 @@ Starthd = $.getdata('qtt_hd').split('&');
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
-
-
-
-
 
 
 function qtt_read() {
