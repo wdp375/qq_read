@@ -102,7 +102,7 @@ function qtt_read() {
 }
 
 function getcookie(){
-    if ($request.url.indexOf("/readtimer/report") > -1){
+    if ($request.url.indexOf("readtimer/report") > -1){
         $.msg($.name,"","捕获到趣头条请求！")
         const qtturl = $request.url
         u1 = $.getdata('qtt_url')
