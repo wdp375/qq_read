@@ -135,7 +135,7 @@ function qhb_lxjl(timeout = 1000) {
         try{
             const result = JSON.parse(data)
             if(result.code == 200){
-                console.log('趣红包离线奖励领取成功：获得'+result.data.reward_gold+"金币。")
+                console.log('趣红包离线奖励领取成功：获得'+String(result.data.reward_gold)+"金币。")
             }
             else{
                 console.log('出错了，以下是详细信息：'+String(result.data))
