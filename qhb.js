@@ -4,7 +4,7 @@
 邀请码：07QVUWP，麻烦填写一下谢谢。
 趣红包https://github.com/dclemon/qq_read/blob/master/qhb.js
 
-#####################################################################################################################################
+
 [task_local]
 #趣红包
 4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js, tag=趣红包, enabled=true
@@ -13,6 +13,7 @@
 ^http://api2.guaniuvideo.com/reward/video url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
 hostname = api2.guaniuvideo.com
+#####################################################################################################################################
 */
 
 const $ = new Env('趣红包');
