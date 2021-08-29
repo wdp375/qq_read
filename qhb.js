@@ -70,7 +70,7 @@ function qhbck() {
         $.msg($.name, "", "趣红包广告数据获取成功！")
     }
 
-    else if ($request.url.indexOf("leaveReward") > -1) {
+    else if ($request.url == "http://api2.guaniuvideo.com/index/leaveReward") {
         const qh_lx_burl = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
