@@ -199,7 +199,7 @@ function qhb_zp(timeout = 1000){
                 $.done()
             }else{
                 qhb_zp_hd = JSON.parse($.getdata('qhb_zp_hd'))
-                qhb_zp_body = JSON.parse($.getdata('qhb_zp_body'))
+                qhb_zp_body = $.getdata('qhb_zp_body')
 
 
 
