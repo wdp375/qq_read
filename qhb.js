@@ -63,7 +63,7 @@ function qhbck() {
         if (qhb_gg_hd) $.setdata(qhb_gg_hd, 'qhb_gg_hd')
         $.log(qhb_gg_hd)
         const qhb_gg_body = JSON.stringify($request.body)
-        if (qhb_gg_body) $.setdata(qhbhd, 'qhb_gg_body')
+        if (qhb_gg_body) $.setdata(qhb_gg_body, 'qhb_gg_body')
         $.log(qhb_gg_body)
         
         
