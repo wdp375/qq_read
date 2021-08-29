@@ -83,7 +83,7 @@ function qtt_read() {
                 }else{
                     $.log("失败:"+startres.message)
                 }
-                await $.wait(30000);
+                await $.wait(35000);
                 resolve()
             }catch(e){}finally {resolve()}
         })
