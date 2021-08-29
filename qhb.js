@@ -57,10 +57,10 @@ function qhbck() {
     }
     else if ($request.url == "http://api2.guaniuvideo.com/reward/videoNotify") {
         const qhb_gg_url = $request.url
-        if (qhb_gg_url) $.setdata(qhburl, 'qhb_gg_url')
-        $.log(qhburl)
+        if (qhb_gg_url) $.setdata(qhb_gg_url, 'qhb_gg_url')
+        $.log(qhb_gg_url)
         const qhb_gg_hd = JSON.stringify($request.headers)
-        if (qhb_gg_hd) $.setdata(qhb_gg_hd, 'qhbhd')
+        if (qhb_gg_hd) $.setdata(qhb_gg_hd, 'qhb_gg_hd')
         $.log(qhb_gg_hd)
         const qhb_gg_body = JSON.stringify($request.body)
         if (qhb_gg_body) $.setdata(qhbhd, 'qhb_gg_body')
