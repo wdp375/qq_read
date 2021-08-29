@@ -40,10 +40,12 @@ const $ = new Env('趣红包');
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
+
+
 //数据获取
 function qhbck() {
     console.log($request.url)
-
+    
     if ($request.url == "http://api2.guaniuvideo.com/reward/video") {
         const qhburl = $request.url
         if (qhburl) $.setdata(qhburl, 'qhburl')
@@ -85,11 +87,9 @@ function qhbck() {
         
         $.msg($.name, "", "趣红包离线奖励数据获取成功！")
     }
-    else{
-        console.log('未匹配到合适的url')
-    
-    }
 }
+
+
 //视频金币
 function qhb_spjb(timeout = 1000) {
 
