@@ -1,5 +1,22 @@
-/*趣头条阅读
+/*
+趣头条
+[task_local]
+#趣头条
+10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js, tag=速蛙, img-url=https://ae01.alicdn.com/kf/U0eeed99dbe9a4cf99b73aaed7902a3a9z.jpg, enabled=true
+
+
+[rewrite_local]
+#趣头条
+^https://m.ok8.icu/api_mweb/user/checkin url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js
+#####################################################################################################################################
+
+[MITM]
+hostname = 
+
+
 */
+
+
 
 const $ = new Env('趣头条');
 $.qdata = [1,2,3]
@@ -17,12 +34,14 @@ let m = $.qdata.length
         if ($.qdata_now = "undefined"){
             $.qdata_now = 0
         }
-
         console.log(`\n共有${m}个qdata,当前执行第${$.qdata_now+1}个！💦\n`)
+        await qtt_read($.qdata_now)
+        $.qdata_now++
+        console.log('qdata_now='+$.qdata_now)
 
-      
-      
-        await qtt_read()
+
+
+
         $.msg("","","趣头条运行完毕！")
     }
 })()
@@ -30,6 +49,11 @@ let m = $.qdata.length
     .finally(() => $.done())
 
 
+function qtt_read(position){
+    qdata = $.qdata[position]
+    console.log('qdata='+qdata)
+
+}
 
 
 
