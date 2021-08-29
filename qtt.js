@@ -4,7 +4,7 @@
 #趣头条
 10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js, tag=趣头条, enabled=true
 
-
+#####################################################################################################################################
 [rewrite_local]
 #趣头条
 ^https://api.1sapp.com/readtimer/report url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js
