@@ -92,7 +92,7 @@ function qhbck() {
 
         $.msg($.name, "", "趣红包广告数据获取成功！")
     }
-    else if ($request.url == "http://api2.guaniuvideo.com/dial/random") {
+    else if ($request.url == "http://h5.guaniuvideo.com/dial/random") {
         const qhb_zp_url = $request.url
         if (qhb_zp_url) $.setdata(qhb_zp_url, 'qhb_zp_url')
         $.log(qhb_zp_url)
