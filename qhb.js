@@ -25,14 +25,32 @@ const $ = new Env('趣红包');
 
         var num = 1;
         while (num<=9){
-            console.log(`\n趣红包观看视频！💦\n`)
-            await qhb_spjb()
+
+            //await qhb_spjb()
+            await $.wait(1000)
+            var c = new Date();
+            newdate = c.getDate()
+
+            if ($.getdata('qhb_old_date') !== 'undifined'){
+                var d = new Date();
+                if(d.getDate()) $.setdata(String(d.getDate()),'qhb_old_date')
+                console.log('今天日期为：'+$.getdata('qhb_old_date'))
+                await qhb_zp()
+            }else if( newdate != d.getDate()){
+                console.log('今天日期为：'+$.getdata('qhb_old_date'))
+                await qhb_zp()
+
+            }else{
+                console.log('今天已经抽奖过了，跳过转盘抽奖')
+            }
+
+
             await $.wait(60000);
             num++;
 
         }
 
-        console.log(`\n趣红包离线奖励！💦\n`)
+
         //await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
         $.done();
@@ -74,9 +92,22 @@ function qhbck() {
 
         $.msg($.name, "", "趣红包广告数据获取成功！")
     }
+    else if ($request.url == "http://api2.guaniuvideo.com/dial/random") {
+        const qhb_zp_url = $request.url
+        if (qhb_zp_url) $.setdata(qhb_zp_url, 'qhb_zp_url')
+        $.log(qhb_zp_url)
+        const qhb_zp_hd = JSON.stringify($request.headers)
+        if (qhb_zp_hd) $.setdata(qhb_zp_hd, 'qhb_zp_hd')
+        $.log(qhb_zp_hd)
+        const qhb_zp_body = JSON.stringify($request.body)
+        if (qhb_zp_body) $.setdata(qhb_zp_body, 'qhb_zp_body')
+        $.log(qhb_zp_body)
+
+
+        $.msg($.name, "", "趣红包转盘数据获取成功！")
+    }
 
     else if ($request.url == "http://api2.guaniuvideo.com/index/leaveReward") {
-        console.log('离线数据匹配成功')
         const qhb_lx_url = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
@@ -92,37 +123,43 @@ function qhbck() {
 
 //视频金币
 function qhb_spjb(timeout = 1000) {
+    console.log(`\n趣红包观看视频！💦\n`)
 
     return new Promise((resolve) => {
         setTimeout( ()=>{
             if (typeof $.getdata('qhbhd') === "undefined") {
                 $.msg($.name,"",'请先获取趣红包视频数据',)
                 $.done()
+            }else{
+                qhbhd = JSON.parse($.getdata('qhbhd'))
+                let url = {
+                    url: $.getdata('qhburl'),
+                    method: `POST`,
+                    headers: qhbhd,
+                    body: $.getdata('qhbbody')
+                }
+                $.post(url, async (err, resp, data) => {
+                    try{
+                        const result = JSON.parse(data)
+                        if(result.code == 200){
+                            console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
+                        }
+                        else{
+                            console.log('出错了，以下是详细信息：'+String(result.data))
+                        }
+                    }catch(e){}finally{resolve()}
+                })
+
+
             }
-            qhbhd = JSON.parse($.getdata('qhbhd'))
-            let url = {
-                url: $.getdata('qhburl'),
-                method: `POST`,
-                headers: qhbhd,
-                body: $.getdata('qhbbody')
-            }
-            $.post(url, async (err, resp, data) => {
-                try{
-                    const result = JSON.parse(data)
-                    if(result.code == 200){
-                        console.log('趣红包观看成功：获得'+String(result.data.reward_gold)+"金币。")
-                    }
-                    else{
-                        console.log('出错了，以下是详细信息：'+String(result.data))
-                    }
-                }catch(e){}finally{resolve()}
-            })
+
         },timeout)
     })
 }
 
 //离线奖励，似乎一天之内领5次，暂时ban了
 function qhb_lxjl(timeout = 1000) {
+    console.log(`\n趣红包离线奖励！💦\n`)
 
     return new Promise((resolve) => {
         setTimeout( ()=>{
@@ -152,6 +189,54 @@ function qhb_lxjl(timeout = 1000) {
             })
         },timeout)
     })
+}
+//转盘
+function qhb_zp(timeout = 1000){
+    console.log(`\n趣红包转盘抽奖！💦\n`)
+    return new Promise((resolve) => {
+        setTimeout( ()=>{
+            if (typeof $.getdata('qhb_zp_hd') === "undefined") {
+                $.msg($.name,"",'请先获取趣红包转盘数据',)
+                $.done()
+            }else{
+                qhb_zp_hd = JSON.parse($.getdata('qhb_zp_hd'))
+
+
+
+                let url = {
+                    url: $.getdata('qhb_zp_url'),
+                    method: `POST`,
+                    headers: qhb_zp_hd,
+                    body: qhb_zp_body
+                }
+
+
+                for (var num =1; num<=10; num++) {
+                    console.log('第'+num+'次转盘抽奖')
+                    $.post(url, async (err, resp, data) => {
+                        try{
+                            const result = JSON.parse(data)
+                            if(result.code == 200){
+                                console.log('趣红包转盘奖励领取成功：获得'+String(result.data.reward)+"金币。")
+                            }
+                            else{
+                                console.log('出错了，以下是详细信息：'+String(result.message))
+                            }
+                        }catch(e){}finally{resolve()}
+                    })
+                   $.wait(1000)
+                }
+
+            }
+
+
+        },timeout)
+    })
+
+
+
+
+
 }
 
 
