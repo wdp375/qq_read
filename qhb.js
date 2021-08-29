@@ -26,7 +26,7 @@ const $ = new Env('趣红包');
         var num = 1;
         while (num<=9){
 
-            //await qhb_spjb()
+            await qhb_spjb()
             await $.wait(1000)
             var c = new Date();
             newdate = c.getDate()
