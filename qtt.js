@@ -38,12 +38,14 @@ let m = $.qdata.length
             
         }
 
-        console.log('qdata_now='+$['qdata_now'])
-        console.log(`\n共有${m}个qdata,当前执行第${$.qdata_now+1}个！💦\n`)
+        for (a in $.qdata){
 
-        await qtt_read($.qdata_now)
-        $.qdata_now++
+            console.log('qdata_now='+$['qdata_now'])
+            console.log(`\n共有${m}个qdata,当前执行第${$.qdata_now+1}个！💦\n`)
+            await qtt_read($.qdata_now)
+            $.qdata_now++
 
+        }
         $.msg("","","趣头条运行完毕！")
     }
 })()
