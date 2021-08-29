@@ -12,7 +12,7 @@
 #趣红包
 ^http://api2.guaniuvideo.com/ url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
-hostname = api2.guaniuvideo.com
+hostname = *.guaniuvideo.com
 #####################################################################################################################################
 */
 
