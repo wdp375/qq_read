@@ -72,7 +72,7 @@ function qhbck() {
     }
 
     else if ($request.url == "http://api2.guaniuvideo.com/index/leaveReward") {
-        const qh_lx_burl = $request.url
+        const qhb_lx_url = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
         const qhb_lx_hd = JSON.stringify($request.headers)
