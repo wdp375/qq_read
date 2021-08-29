@@ -51,34 +51,28 @@ function qhbck() {
         const qhbbody = JSON.stringify($request.body)
         if (qhbbody) $.setdata(qhbhd, 'qhbbody')
         $.log(qhbbody)
-        
-        
         $.msg($.name, "", "趣红包视频数据获取成功！")
     }
     if ($request.url == "http://api2.guaniuvideo.com/reward/videoNotify") {
         const qhb_gg_url = $request.url
         if (qhb_gg_url) $.setdata(qhburl, 'qhb_gg_url')
-        $.log(qhburl)
+        $.log(qhb_gg_url)
         const qhb_gg_hd = JSON.stringify($request.headers)
         if (qhb_gg_hd) $.setdata(qhb_gg_hd, 'qhbhd')
         $.log(qhb_gg_hd)
         const qhb_gg_body = JSON.stringify($request.body)
         if (qhb_gg_body) $.setdata(qhbhd, 'qhb_gg_body')
         $.log(qhb_gg_body)
-        
-        
         $.msg($.name, "", "趣红包广告数据获取成功！")
     }
 
     if ($request.url == "http://api2.guaniuvideo.com/index/leaveReward") {
-        const qh_lx_url = $request.url
+        const qhb_lx_url = $request.url
         if (qhb_lx_url) $.setdata(qhb_lx_url, 'qhb_lx_url')
         $.log(qhb_lx_url)
         const qhb_lx_hd = JSON.stringify($request.headers)
         if (qhb_lx_hd) $.setdata(qhb_lx_hd, 'qhb_lx_hd')
         $.log(qhb_lx_hd)
-        
-        
         $.msg($.name, "", "趣红包离线奖励数据获取成功！")
     }
 }
