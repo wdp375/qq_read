@@ -10,7 +10,7 @@
 4 0 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js, tag=趣红包, enabled=true
 [rewrite_local]
 #趣红包
-^http://api2.guaniuvideo.com/reward/video url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
+^http://api2.guaniuvideo.com/ url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
 hostname = api2.guaniuvideo.com
 #####################################################################################################################################
