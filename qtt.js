@@ -95,9 +95,10 @@ function qtt_read() {
 }
 
 function qttck(){
-    console.log($request.url)
+    
 
     if ($request.url.indexOf("report") > -1){
+        console.log($request.url)
 
 
         if ($.getdata('qtt_url') == 'undifined'){
