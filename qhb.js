@@ -1,6 +1,6 @@
 
 /*
-#####################################################################################################################################
+
 邀请码：07QVUWP，麻烦填写一下谢谢。
 趣红包https://github.com/dclemon/qq_read/blob/master/qhb.js
 
@@ -12,7 +12,7 @@
 ^http://api2.guaniuvideo.com/reward/video url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js
 [MITM]
 hostname = api2.guaniuvideo.com
-
+#####################################################################################################################################
 */
 
 const $ = new Env('趣红包');
