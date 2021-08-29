@@ -16,17 +16,22 @@ hostname = api2.guaniuvideo.com
 */
 
 const $ = new Env('趣红包');
-let qhburl = $.getdata('qhburl')
-let qhbhd = $.getdata('qhbhd')
 !(async () => {
     if (typeof $request !== "undefined") {
         await qhbck()
 
     } else {
 
-        console.log(`\n趣红包開始！💦\n`)
-        await qhb_spjb()
-        //await qhb_lxjl()
+        
+        var num = 1;
+            
+        while (num<=10){
+            console.log(`\n趣红包观看视频！💦\n`)
+            await qhb_spjb()
+            num++;
+        }
+        console.log(`\n趣红包离线奖励！💦\n`)
+        await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
     }
 })()
