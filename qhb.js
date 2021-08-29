@@ -22,19 +22,20 @@ const $ = new Env('趣红包');
         await qhbck()
 
     } else {
-
         
         var num = 1;
-            
         while (num<=9){
             console.log(`\n趣红包观看视频！💦\n`)
             await qhb_spjb()
             await $.wait(60000);
             num++;
+            
         }
+        
         console.log(`\n趣红包离线奖励！💦\n`)
         //await qhb_lxjl()
         $.msg("","","趣红包运行完毕！")
+        $.done();
     }
 })()
     .catch((e) => $.logErr(e))
