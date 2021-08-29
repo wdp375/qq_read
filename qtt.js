@@ -110,7 +110,7 @@ function qttck(){
             const qtthd = JSON.stringify($request.headers)
             h1 = $.getdata('qtt_hd')
             if(qtthd)    $.setdata(qtthd+'&'+h1,'qtt_hd')
-            $.msg($.name,"","第${urlArr.length+1}次趣头条数据获取成功！")
+            $.msg($.name,"","第"+ urlArr.length +1+"次趣头条数据获取成功！")
         }
     }
 }
