@@ -82,6 +82,10 @@ function qhbck() {
         
         $.msg($.name, "", "趣红包离线奖励数据获取成功！")
     }
+    else{
+        console.log('未匹配到合适的url')
+    
+    }
 }
 //视频金币
 function qhb_spjb(timeout = 1000) {
