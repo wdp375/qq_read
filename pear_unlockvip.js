@@ -57,6 +57,7 @@ if (url.indexOf(vipinfo) != -1) {
    obj["vipLevel"] = 3;
    obj["vipEndTime"] = "2222-05-21";
    obj["cartoonVip"] = true;
+	obj["cartoonVipEndTime"] = "2222-05-21";
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(acgvip) != -1) {
