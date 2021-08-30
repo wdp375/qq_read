@@ -75,7 +75,9 @@ if (url.indexOf(picfree) != -1) {
  }
 if (url.indexOf(spfree) != -1) {
 	obj["value"] = true;
+	//这下面两个本来没有
 	obj["data"] = 1;
+	obj["message"] = "1";
 	
 	body = JSON.stringify(obj);
  }
