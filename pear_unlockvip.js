@@ -19,7 +19,7 @@ const checkvip2 = '/Account/CheckVip';
 
 const acgvip = '/cartoon/VipInfo';
 
-
+const score = '/account/UserScore';
 
 const vipinfo = '/account/IndexDetail';
 
@@ -40,7 +40,10 @@ if (url.indexOf(vip) != -1) {
 	obj["data"] = 1;
 	body = JSON.stringify(obj);
  }
-
+if (url.indexOf(score) != -1) {
+	obj["value"] = "9999";
+	body = JSON.stringify(obj);
+ }
 if (url.indexOf(checkvip) != -1) {
 	obj["data"] = 1;
    obj["value"] = true;
