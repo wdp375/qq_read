@@ -17,6 +17,8 @@ const checkvip = '/account/IsVip';
 
 const checkvip2 = '/Account/CheckVip';
 
+const acgvip = '/cartoon/VipInfo';
+
 const vipinfo = '/account/IndexDetail';
 
 const safe = '/account/IsSafeUser';
@@ -52,6 +54,12 @@ if (url.indexOf(vipinfo) != -1) {
    obj["vipLevel"] = 3;
    obj["vipEndTime"] = "2222-05-21";
    obj["cartoonVip"] = true;
+	body = JSON.stringify(obj);
+ }
+if (url.indexOf(acgvip) != -1) {
+	obj["isVip"] = true;
+   obj["vipEndTime"] = "2222-05-21";
+   obj["loadCount"] = 999;
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(safe) != -1) {
