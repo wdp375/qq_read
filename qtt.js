@@ -1,4 +1,7 @@
 /*
+
+下载地址：http://a.gg-player.com/mfmn/mbBL.html?pid=5oJuKWki
+邀请码：5oJuKWki感谢填写，转发请勿修改
 趣头条
 [task_local]
 #趣头条
