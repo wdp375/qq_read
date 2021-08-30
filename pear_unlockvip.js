@@ -19,6 +19,8 @@ const checkvip2 = '/Account/CheckVip';
 
 const acgvip = '/cartoon/VipInfo';
 
+
+
 const vipinfo = '/account/IndexDetail';
 
 const safe = '/account/IsSafeUser';
@@ -73,6 +75,8 @@ if (url.indexOf(picfree) != -1) {
  }
 if (url.indexOf(spfree) != -1) {
 	obj["value"] = true;
+	obj["data"] = 1;
+	
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(spcount) != -1) {
