@@ -41,7 +41,7 @@ if (url.indexOf(vip) != -1) {
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(score) != -1) {
-	obj["value"] = "9999";
+	obj["value"] = "3000";
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(checkvip) != -1) {
