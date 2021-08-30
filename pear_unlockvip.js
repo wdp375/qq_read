@@ -1,7 +1,7 @@
 /*
 app下载地址：https://is.gd/atCoeV
 #圈Xpear解锁会员
-^https:\/\/m\.pearkin\.com\/api\/(movie\/WatchMovie|account\/IsVip|Account\/CheckVip|account\/IndexDetail|account\/IsSafeUser|PictureSet\/LookPhoto|account\/Milk|video\/watch.*|video\/WatchCount|account\/UserSetting) url script-response-body https://raw.githubusercontent.com/dclemon/qq_read/master/pear_unlockvip.js
+^https:\/\/m\.pearkin\.com\/api\/(movie\/WatchMovie|account\/IsVip|cartoon\/VipInfo|Account\/CheckVip|account\/IndexDetail|account\/IsSafeUser|PictureSet\/LookPhoto|account\/Milk|video\/watch.*|video\/WatchCount|account\/UserSetting) url script-response-body https://raw.githubusercontent.com/dclemon/qq_read/master/pear_unlockvip.js
 MITM = m.pearkin.com
 
 
