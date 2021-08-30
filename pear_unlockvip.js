@@ -35,6 +35,7 @@ const point = '/account/UserSetting';
 
 if (url.indexOf(vip) != -1) {
 	obj["canWath"] = true;
+	obj["data"] = 1;
 	body = JSON.stringify(obj);
  }
 
