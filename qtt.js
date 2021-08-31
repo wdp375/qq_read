@@ -16,8 +16,7 @@
 hostname = api.1sapp.com
 
 
-*/
-const $ = new Env("趣头条阅读文章")
+*/const $ = new Env("趣头条阅读文章")
 
 let Starturl = [], gainscore = Number(),Starthd = [];
 let urlArr = [],hdArr = [];
@@ -57,10 +56,15 @@ Starthd = $.getdata('qtt_hd').split('&');
                 $.index = i + 1;
                 console.log(`-------------------------\n\n开始趣头条第${$.index}次任务`)
                 gainurl = urlArr[i];
-                gainhd = JSON.parse(hdArr[i])
-                
+                try{
+                    gainhd = JSON.parse(hdArr[i])
+                }catch(e){
+                    gainhd = '0'
+                }
             }
-            await qtt_read();
+            if (gainhd !== '0'){
+                await qtt_read();
+            }
         }
         console.log(`-------------------------\n\n趣头条共完成${$.index}次任务，浏览赚任务全部结束`);
         $.msg($.name, `共完成${$.index}次任务`)
@@ -95,7 +99,7 @@ function qtt_read() {
 
 function qttck(){
     
-    if ($request.url.indexOf("report") > -1){
+    if ($request.url.indexOf("readtimer/report") > -1){
         console.log($request.url)
 
         if ($.getdata('qtt_url') == 'undifined'){
