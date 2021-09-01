@@ -57,7 +57,7 @@ if (url.indexOf(checkvip2) != -1) {
 
 if (url.indexOf(vipinfo) != -1) {
 	obj["nickName"] = "爱熬夜的好心人";
-   obj["vipLevel"] = 3;
+   obj["vipLevel"] = 9;
    obj["vipEndTime"] = "2222-05-21";
    obj["cartoonVip"] = true;
 	obj["cartoonVipEndTime"] = "2222-05-21";
@@ -97,7 +97,7 @@ if (url.indexOf(milk) != -1) {
 if (url.indexOf(point) != -1) {
 	obj["orderVip"] = true;
    	obj["accountHadSet"] = true;
-   obj["memberPoint"] = 8000;
+   obj["memberPoint"] = 3000;
 	body = JSON.stringify(obj);
  }
 
