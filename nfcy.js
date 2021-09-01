@@ -1,10 +1,10 @@
 /*
 南方次元
 [task_local]
-#速蛙
+#nfacg
 10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/nfcy.js, tag=南方次元, enabled=true
 [rewrite_local]
-#速蛙
+#nfacg
 ^http://nfmoe.moe/wp-admin/admin-ajax.php url script-request-header https://raw.githubusercontent.com/dclemon/qq_read/master/nfcy.js
 #####################################################################################################################################
 [MITM]
@@ -17,30 +17,30 @@ hostname = nfmoe.moe
 
 
 const $ = new Env('南方次元');
-let swurl = $.getdata('swurl')
-let swhd = $.getdata('swhd')
+let nfcyurl = $.getdata('nfcyurl')
+let nfcyhd = $.getdata('nfcyhd')
 !(async () => {
     if (typeof $request !== "undefined") {
-        await swck()
+        await nfcyck()
 
     } else {
 
         console.log(`\n南方次元開始！💦\n`)
-        await swqd()
+        await nfcyqd()
         $.msg("","","南方次元运行完毕！")
     }
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 //数据获取
-function swck() {
+function nfcyck() {
     if ($request.url.indexOf("action=zrz_mission") > -1) {
-        const swurl = $request.url
-        if (swurl) $.setdata(swurl, 'swurl')
-        $.log(swurl)
-        const swhd = JSON.stringify($request.headers)
-        if (swhd) $.setdata(swhd, 'swhd')
-        $.log(swhd)
+        const nfcyurl = $request.url
+        if (nfcyurl) $.setdata(nfcyurl, 'nfcyurl')
+        $.log(nfcyurl)
+        const nfcyhd = JSON.stringify($request.headers)
+        if (nfcyhd) $.setdata(nfcyhd, 'nfcyhd')
+        $.log(nfcyhd)
 
         $.msg($.name, "", "南方次元数据获取成功！")
     }
@@ -49,21 +49,21 @@ function swck() {
 
 
 
-function swqd(timeout = 0) {
+function nfcyqd(timeout = 0) {
     return new Promise((resolve) => {
         setTimeout( ()=>{
-            if (typeof $.getdata('swurl') === "undefined") {
+            if (typeof $.getdata('nfcyurl') === "undefined") {
                 $.msg($.name,"",'请先获取南方次元数据',)
                 $.done()
             }
 
 
-            swhd = JSON.parse($.getdata('swhd'))
+            nfcyhd = JSON.parse($.getdata('nfcyhd'))
 
             const myRequest =  {
                 url: `http://nfmoe.moe/wp-admin/admin-ajax.php?action=zrz_mission`,
                 method: `GET`,
-                headers: swhd,
+                headers: nfcyhd,
             }
             $task.fetch(myRequest).then(response => {
                 const result = JSON.parse(response.body)
