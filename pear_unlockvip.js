@@ -31,7 +31,7 @@ const spfree = '/video/watch';
 
 const spcount = '/video/WatchCount';
 
-const milk = '/account/Milk';
+const milk = '/account/Grow';
 
 const point = '/account/UserSetting';
 
@@ -46,27 +46,28 @@ if (url.indexOf(score) != -1) {
  }
 if (url.indexOf(checkvip) != -1) {
 	obj["data"] = 1;
-   obj["value"] = true;
+   	obj["value"] = true;
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(checkvip2) != -1) {
 	obj["data"] = 1;
-   obj["value"] = true;
+   	obj["value"] = true;
 	body = JSON.stringify(obj);
  }
 
 if (url.indexOf(vipinfo) != -1) {
 	obj["nickName"] = "爱熬夜的好心人";
-   obj["vipLevel"] = 9;
-   obj["vipEndTime"] = "2222-05-21";
-   obj["cartoonVip"] = true;
+   	obj["vipLevel"] = 3;
+   	obj["vipEndTime"] = "2222-05-21";
+   	obj["cartoonVip"] = true;
 	obj["cartoonVipEndTime"] = "2222-05-21";
+	
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(acgvip) != -1) {
 	obj["isVip"] = true;
-   obj["vipEndTime"] = "2222-05-21";
-   obj["loadCount"] = 999;
+   	obj["vipEndTime"] = "2222-05-21";
+   	obj["loadCount"] = 999;
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(safe) != -1) {
@@ -90,8 +91,9 @@ if (url.indexOf(spcount) != -1) {
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(milk) != -1) {
-	obj["milkName"] = "肯德鸡";
-   	obj["milkLevel"] = 7;
+	obj["currentLevel"]["name"] = "肯德鸡";
+   	obj["currentLevel"]['level'] = 7;
+	obj["currentLevel"]['exp'] = 9999;
 	body = JSON.stringify(obj);
  }
 if (url.indexOf(point) != -1) {
