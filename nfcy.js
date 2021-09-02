@@ -11,11 +11,6 @@
 hostname = nfmoe.moe
 */
 
-
-
-
-
-
 const $ = new Env('南方次元');
 let nfcyurl = $.getdata('nfcyurl')
 let nfcyhd = $.getdata('nfcyhd')
@@ -47,8 +42,6 @@ function nfcyck() {
 }
 
 
-
-
 function nfcyqd(timeout = 10000) {
     return new Promise((resolve) => {
         setTimeout( ()=>{
@@ -56,10 +49,7 @@ function nfcyqd(timeout = 10000) {
                 $.msg($.name,"",'请先获取南方次元数据',)
                 $.done()
             }
-
-
             nfcyhd = JSON.parse($.getdata('nfcyhd'))
-
             const myRequest =  {
                 url: `http://nfmoe.moe/wp-admin/admin-ajax.php?action=zrz_mission`,
                 method: `GET`,
@@ -67,6 +57,7 @@ function nfcyqd(timeout = 10000) {
             }
             $task.fetch(myRequest).then(response => {
                 const result = JSON.parse(response.body)
+                console.log(result)
                 if(result.code == 401){
                     console.log('签到失败：已经签过到了。')
                 }
