@@ -8,7 +8,7 @@
         "0 6,12 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js, tag=趣头条",
         "0/10 6-14 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js, tag=趣红包",
         "10 6 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/sw.js, tag=速蛙签到",
-        "1 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js"
+        "1 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js, tag=WPS签到""
 
     ]
 }
