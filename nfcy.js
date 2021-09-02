@@ -57,11 +57,11 @@ function nfcyqd(timeout = 10000) {
             }
             $task.fetch(myRequest).then(response => {
                 const result = JSON.parse(response.body)
-                console.log(result)
-                if(result.code == 401){
+                console.log(response.body)
+                if(result.status == 401){
                     console.log('签到失败：已经签过到了。')
                 }
-                if(result.code == 200){
+                if(result.status == 200){
                     console.log('签到成功！'+result.msg+'点经验。')
                 }$.done()
             }, reason => {
