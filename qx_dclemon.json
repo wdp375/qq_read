@@ -3,7 +3,6 @@
     "name":"dclemon",
     "description":"自用任务",
     "task":[
-        "5 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, tag=京东多合一签到, img-url=https://raw.githubusercontent.com/NobyDa/mini/master/Color/jd.png",
         "10 * * * * https://raw.githubusercontent.com/dclemon/qq_read/master/nfcy.js, tag=南方次元",
         "0 6,12 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qtt.js, tag=趣头条",
         "0/10 6-14 * * * https://raw.githubusercontent.com/dclemon/qq_read/master/qhb.js, tag=趣红包",
