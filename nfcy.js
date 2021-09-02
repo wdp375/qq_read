@@ -49,7 +49,7 @@ function nfcyck() {
 
 
 
-function nfcyqd(timeout = 0) {
+function nfcyqd(timeout = 10000) {
     return new Promise((resolve) => {
         setTimeout( ()=>{
             if (typeof $.getdata('nfcyurl') === "undefined") {
